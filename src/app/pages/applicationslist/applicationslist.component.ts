@@ -8,13 +8,11 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 })
 
 
-
 // const options = {
 //   header: new HttpHeaders({
 //     'Content-Type': 'application/json',
 //     Authorization: 'Basic ' + btoa('test:test')
 //   }),
-//   // params: new HttpParams().set('test', 'test')
 // };
 
 export class ApplicationslistComponent implements OnInit {
@@ -27,12 +25,12 @@ export class ApplicationslistComponent implements OnInit {
 
   ngOnInit(): void {
 
-  //   this.http.get('http://10.105.200.111:6169/forex-auction/application/list')
-  //     .subscribe((response) => {
-  //       this.response = response;
-  //       console.log(this.response);
-  //     });
-  //
+    this.http.get('http://10.105.200.111:6169/forex-auction/application/list',  )
+      .subscribe((response) => {
+        this.response = response;
+        console.log(this.response);
+      });
+
     }
 
 
