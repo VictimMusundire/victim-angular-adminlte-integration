@@ -4,7 +4,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {LoginComponent} from './pages/login/login.component';
 import {ApplicationslistComponent} from './pages/applicationslist/applicationslist.component';
 import {ApplyformComponent} from './pages/applyform/applyform.component';
-
+import {PagenotfoundComponent} from './pages/pagenotfound/pagenotfound.component';
 
 
 const appRoutes: Routes = [
@@ -13,7 +13,7 @@ const appRoutes: Routes = [
       {path: 'applications', component: ApplicationslistComponent},
       {path: 'apply', component: ApplyformComponent},
       {path: 'login', component: LoginComponent},
-      // {path: '**', redirectTo: '/login', pathMatch: 'full'}
+      // {path: '**', component : PagenotfoundComponent}
 ];
 
 @NgModule({

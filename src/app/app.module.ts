@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ApplicationslistComponent } from './pages/applicationslist/applicationslist.component';
 import { ApplyformComponent } from './pages/applyform/applyform.component';
 import { ExtractfilesComponent } from './pages/extractfiles/extractfiles.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ExtractfilesComponent } from './pages/extractfiles/extractfiles.compone
     HomeComponent,
     ApplicationslistComponent,
     ApplyformComponent,
-    ExtractfilesComponent
+    ExtractfilesComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

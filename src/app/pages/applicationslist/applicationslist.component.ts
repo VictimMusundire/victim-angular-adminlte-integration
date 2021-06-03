@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpServiceService} from '../http-service.service';
+import {VictimResponse} from '../VictimResponse';
+import {mainNgcc} from '@angular/compiler-cli/ngcc/src/main';
 
 @Component({
   selector: 'app-applicationslist',
@@ -7,32 +10,19 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
   styleUrls: ['./applicationslist.component.scss']
 })
 
-
-// const options = {
-//   header: new HttpHeaders({
-//     'Content-Type': 'application/json',
-//     Authorization: 'Basic ' + btoa('test:test')
-//   }),
-// };
-
 export class ApplicationslistComponent implements OnInit {
 
   response: any;
-
-  constructor(private http: HttpClient) { }
-
-
-
+  postId = '';
+  victimData: VictimResponse<any>[][] | undefined;
+  constructor(private httpService: HttpServiceService) { }
   ngOnInit(): void {
-
-    this.http.get('http://10.105.200.111:6169/forex-auction/application/list',  )
-      .subscribe((response) => {
-        this.response = response;
-        console.log(this.response);
+    this.httpService.getVictim<any>().subscribe(
+      data => {
+        console.log('this.victim', data.body);
+        this.victimData = data.body;
+      }, err => {
+        console.log(err);
       });
-
     }
-
-
-
 }
